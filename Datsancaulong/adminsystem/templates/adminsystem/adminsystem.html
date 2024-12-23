@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            color: white;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1rem;
+        }
+        .card {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 1rem;
+            padding: 1.5rem;
+            flex: 1 1 calc(30% - 2rem);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .card button {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>System Admin Dashboard</h1>
+</header>
+
+<nav>
+    <a href="#manage-accounts">Manage Accounts</a>
+    <a href="#manage-courts">Manage Courts</a>
+    <a href="#register-court">Register New Court</a>
+</nav>
+
+<div class="container">
+    <!-- Manage Accounts Section -->
+    <div class="card" id="manage-accounts">
+        <h3>Manage User Accounts</h3>
+        <p>View, edit, or delete user accounts. Assign roles and permissions.</p>
+        <button>Go to Accounts</button>
+    </div>
+
+    <!-- Manage Courts Section -->
+    <div class="card" id="manage-courts">
+        <h3>Manage Court Information</h3>
+        <p>Update court details, track activity, and manage maintenance schedules.</p>
+        <button>Go to Courts</button>
+    </div>
+
+    <!-- Register New Court Section -->
+    <div class="card" id="register-court">
+        <h3>Register New Court</h3>
+        <p>Add a new court with details like location, pricing, and operating hours.</p>
+        <button>Register Court</button>
+    </div>
+</div>
+
+</body>
+</html>
