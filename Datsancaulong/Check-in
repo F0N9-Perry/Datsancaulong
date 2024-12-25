@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-in </title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #A8EDCB; /* Celadon */
+        }
+        header {
+            background-color: #43AC78; /* Jade */
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #64C695; /* Mint */
+            color: white;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+        nav a:hover {
+            background-color: #66D6A2; /* Emerald */
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        .card {
+            background: white;
+            border: 1px solid #93E9BE; /* Aquamarine */
+            border-radius: 8px;
+            margin: 1rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #43AC78; /* Jade */
+        }
+        .card button {
+            background-color: #43AC78; /* Jade */
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card button:hover {
+            background-color: #66D6A2; /* Emerald */
+        }
+        .qr-input {
+            margin: 1rem 0;
+        }
+        .qr-input input {
+            padding: 0.5rem;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #93E9BE; /* Aquamarine */
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Check-in </h1>
+    </header>
+    <nav>
+        <a href="#checkin-qr">Check-in via QR Code</a>
+        <a href="#checkin-info">Check-in via Booking Info</a>
+    </nav>
+    <div class="container">
+        <!-- Check-in via QR Code -->
+        <div class="card" id="checkin-qr">
+            <h3>Check-in via QR Code</h3>
+            <p>Scan the QR code provided in your booking confirmation.</p>
+            <button>Scan QR Code</button>
+        </div>
+        <!-- Check-in via Booking Info -->
+        <div class="card" id="checkin-info">
+            <h3>Check-in via Booking Info</h3>
+            <p>Enter your booking ID and details to confirm your check-in.</p>
+            <div class="qr-input">
+                <input type="text" placeholder="Enter Booking ID">
+            </div>
+            <button>Confirm Check-in</button>
+        </div>
+    </div>
+</body>
+</html>
