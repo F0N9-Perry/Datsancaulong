@@ -1,0 +1,141 @@
+<!DOCTYPE html>  
+<html lang="vi">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Quản Lý Sân Cầu Lông</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 20px;  
+            padding: 20px;  
+            border: 1px solid #cccccc;  
+            background-color: #e9f8f4;
+
+        }  
+        h2 {  
+            color: #43ac78;  
+        }  
+        form {  
+            margin-bottom: 20px;  
+        }  
+        table {  
+            width: 100%;  
+            border-collapse: collapse;  
+            margin-top: 20px;  
+        }  
+        th, td {  
+            padding: 10px;  
+            border: 1px solid #ddd;  
+            text-align: center;  
+        }  
+        th {  
+            background-color: #93e9be;  
+        }  
+        tr:nth-child(even) {
+            background-color: #a8edcb;
+        }
+        tr:nth-child(odd) {
+            background-color: #64c695;
+        }
+        button {
+            background-color: #66d6a2;
+            color: white;
+            border: none;
+            paddinng: 10px 15px;
+            cursor: pointer;
+        }
+        button {
+            background-color: #2b7a52
+        }
+        button {
+            border-radius: 12px;
+        }
+        button:hover {
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.252)
+        }
+    </style>  
+</head>  
+<body>  
+
+    <!-- Check-in Customer -->  
+
+    <h2>Check-in cho Khách Hàng</h2>  
+    <form id="checkinForm">  
+        <label for="customerName">Tên Khách Hàng:</label>  
+        <input type="text" id="customerName" name="customerName" required><br><br>  
+
+        <label for="bookingCode">Mã Đặt Sân:</label>  
+        <input type="text" id="bookingCode" name="bookingCode" required><br><br>  
+
+        <label for="courtNumber">Số Sân:</label>  
+        <input type="text" id="courtNumber" name="courtNumber" required><br><br>  
+
+        <button type="submit">Check-in</button>  
+    </form>  
+    <div id="message"></div>  
+
+    <!-- Theo doi va kiem tra tinh hinh hoat dong san --> 
+
+    <h2>Tình Hình Hoạt Động Sân</h2>  
+    <table>  
+        <thead>  
+            <tr>  
+                <th>Số Sân</th>  
+                <th>Tình Trạng</th>  
+                <th>Thời Gian Sử Dụng</th>  
+                <th>Thời Gian Còn Lại</th>  
+            </tr>  
+        </thead>  
+        <tbody id="courtStatusTable">  
+            <tr>  
+                <td>1</td>  
+                <td>Còn trống</td>  
+                <td>-</td>  
+                <td>-</td>  
+            </tr>  
+            <tr>  
+                <td>2</td>  
+                <td>Đang sử dụng</td>  
+                <td>-</td> 
+                <td>-</td>  
+            </tr>  
+        </tbody>  
+    </table>  
+
+    <!-- Bao cao van de ky thuat -->  
+
+    <h2>Báo cáo Vấn đề Kỹ Thuật</h2>  
+    <form id="issueReportForm">  
+        <label for="reportCourtNumber">Số Sân:</label>  
+        <input type="text" id="reportCourtNumber" name="reportCourtNumber" required><br><br>  
+
+        <label for="issueDescription">Mô Tả Vấn Đề:</label><br>  
+        <textarea id="issueDescription" name="issueDescription" required></textarea><br><br>  
+
+        <label for="issueCategory">Phân loại Vấn Đề:</label>  
+        <select id="issueCategory" name="issueCategory">  
+            <option value="Kỹ thuật">Kỹ thuật</option>  
+            <option value="Vệ sinh">Vệ sinh</option>  
+            <option value="Khác">Khác</option>  
+        </select><br><br>  
+
+        <button type="submit">Gửi Báo cáo</button>  
+    </form>  
+    <div id="reportMessage"></div>  
+
+    <script>  
+        // Xu ly check-in khach hang  
+        document.getElementById("checkinForm").onsubmit = function(event) {  
+            event.preventDefault();  
+            document.getElementById("message").innerText = "Check-in thành công cho " + document.getElementById("customerName").value;  
+        };  
+
+        // Xu ly bao cao van de ky thuat  
+        document.getElementById("issueReportForm").onsubmit = function(event) {  
+            event.preventDefault();  
+            document.getElementById("reportMessage").innerText = "Báo cáo đã được gửi thành công.";  
+        };  
+    </script>  
+</body>  
+</html>
