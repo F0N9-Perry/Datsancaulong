@@ -4,5 +4,5 @@ from .import views
 
 
 urlpatterns = [
-    path('', views.adminsystem, name= "admin")
+    path('adminsystem/', views.adminsystem, name= "adminsystem")
 ]
