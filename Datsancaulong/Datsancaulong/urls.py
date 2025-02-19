@@ -20,6 +20,7 @@ from adminsystem import views as adminsystem
 
 urlpatterns = [
     path('', include('adminsystem.urls')),
+    path('', include('home.urls')),
     path('admin/', admin.site.urls),
     path('',adminsystem.adminsystem)
 ]
